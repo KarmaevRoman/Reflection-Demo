@@ -4,8 +4,12 @@ using System.Text;
 
 namespace Reflection_Demo.ViewModel.ClassForReflection
 {
-    internal class Human
+    public class Human : BaseViewModel
     {
+        public Human()
+        {
+
+        }
         public Human(string name, int age)
         {
             var fullName = name.Split(' ');

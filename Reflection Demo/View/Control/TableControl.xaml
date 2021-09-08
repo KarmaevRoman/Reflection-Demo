@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="Reflection_Demo.View.Control.TableControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Reflection_Demo.ViewModel.ClassForReflection"
+             mc:Ignorable="d" 
+             d:DesignHeight="200" d:DesignWidth="260">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock  Grid.Column="0" Grid.Row="0" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center">Color</TextBlock>
+        <TextBlock  Grid.Column="0" Grid.Row="1" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center">Material</TextBlock>
+        <TextBlock  Grid.Column="0" Grid.Row="2" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center">Width</TextBlock>
+        <TextBlock  Grid.Column="0" Grid.Row="3" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center">Height</TextBlock>
+        <TextBlock  Grid.Column="1" Grid.Row="0" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Text="{Binding Color}"/>
+        <TextBlock  Grid.Column="1" Grid.Row="1" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Text="{Binding Material}"/>
+        <TextBlock  Grid.Column="1" Grid.Row="2" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Text="{Binding Width}"/>
+        <TextBlock  Grid.Column="1" Grid.Row="3" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Text="{Binding Height}"/>
+    </Grid>
+</UserControl>

@@ -12,9 +12,9 @@ namespace Reflection_Demo.ViewModel
     {
         private readonly object[] _classObjects;
 
-        private Dictionary<string, object> _selectedClassProperty;
-
         private string _selectedName;
+
+        private object _selectedItem;
 
         public MainViewModel()
         {
@@ -27,26 +27,18 @@ namespace Reflection_Demo.ViewModel
             set
             {
                 Set(ref _selectedName, value);
-                var element = _classObjects.First(it => it.GetType().Name == _selectedName);
-                var typeElement = element.GetType();
-                var properties = typeElement.GetProperties();
-                var classProperties = new Dictionary<string, object>();
-                foreach (var property in properties)
-                {
-                    classProperties[property.Name] = property.GetValue(element);
-                }
+                SelectedItem = _classObjects.First(it => it.GetType().Name == _selectedName);
+            } 
+        }
 
-                SelectedClassProperty = classProperties;
-            }
+        public object SelectedItem
+        {
+            get => _selectedItem;
+            set => Set(ref _selectedItem, value);
+
         }
 
         public List<string> ClassNames => _classObjects.Select(it => it.GetType().Name).ToList();
-
-        public Dictionary<string, object> SelectedClassProperty
-        {
-            get => _selectedClassProperty;
-            set => Set(ref _selectedClassProperty, value);
-        }
 
         private object[] GetObjects()
         {

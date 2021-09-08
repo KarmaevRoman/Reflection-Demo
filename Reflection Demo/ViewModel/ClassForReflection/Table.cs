@@ -1,13 +1,17 @@
 ﻿namespace Reflection_Demo.ViewModel.ClassForReflection
 {
-    internal class Table
+    public class Table
     {
+        public Table()
+        {
+
+        }
         public Table(string color, string material, int width, int height)
         {
             Color = color;
             Material = material;
             Width = width;
-            this.height = height;
+            this.Height = height;
         }
 
         public string Color { get; }
@@ -16,6 +20,6 @@
 
         public int Width { get; }
 
-        public int height { get; }
+        public int Height { get; }
     }
 }
